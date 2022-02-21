@@ -1,0 +1,45 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+the
+{% endblock %}
+{% block childcontent %}
+
+
+
+<form action="checkprime2" method="get">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<center>
+	Enter Number
+	<br>
+	<input type="text" name="txtnum1" placeholder="Enter First Number" />
+	<br>
+	<br>
+	<br>
+	<input type="submit" name="btnsubmit" value="CheckPrime" />
+	</center>
+
+</form>
+
+
+<center>
+{{result}}
+</center>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

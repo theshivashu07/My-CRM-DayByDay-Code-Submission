@@ -1,0 +1,50 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+the
+{% endblock %}
+{% block childcontent %}
+
+
+
+<form action="onlysum2" method="get">
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<center>
+	Enter First Number
+	<br>
+	<input type="text" name="txtnum1" placeholder="Enter First Number" />
+	<br>
+	<br>
+	Enter Second Number
+	<br>
+	<input type="text" name="txtnum2" placeholder="Enter Second Number" />
+	<br>
+	<br>
+	<input type="submit" name="btnsubmit" value="Addition" />
+	</center>
+
+</form>
+
+
+<center>
+{{result}}
+</center>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
