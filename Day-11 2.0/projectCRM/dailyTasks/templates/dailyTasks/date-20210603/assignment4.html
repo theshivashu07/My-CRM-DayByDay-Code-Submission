@@ -1,0 +1,70 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+Showing Country's Cities
+{% endblock %}
+{% block childcontent %}
+
+
+
+<form action="" method="post">
+{% csrf_token %}
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<center>
+	<b>Select Country Name</b>
+	<br>
+	<select name="CountryName" value="{{CountryNamed}}">			#
+		<option value="">Select Country </option>
+		<option value="America">America</option>
+		<option value="Australia">Australia</option>
+		<option value="China">China</option>
+		<option value="India">India</option>
+		<option value="Russia">Russia</option>
+	</select>
+
+
+	<br>
+	<br>
+	<input type="submit" name="btnsubmit" value="Submit" />
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+	<select multiple="true">
+		{% for result in data %}
+		<option value="{{result}}">{{result}}</option><br>
+		{% endfor %}
+	</select>
+
+
+	</center>
+</form>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+{% endblock %}
+
+
+
+
+
+
+
+

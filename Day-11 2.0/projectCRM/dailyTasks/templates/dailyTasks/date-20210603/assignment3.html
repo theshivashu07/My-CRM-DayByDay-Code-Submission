@@ -1,0 +1,73 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+Fee Calculation
+{% endblock %}
+{% block childcontent %}
+
+
+
+<form action="" method="post">
+{% csrf_token %}
+	<br>
+	<br>
+	<br>
+	<br>
+	<center>
+	<h2><b>Fee Calc</b></h2>
+	<br>
+	<br>
+	<b>Basic Courses</b>
+	<br>
+	<input type="checkbox" name="course[]" value="C" />C - 2000
+	<br>
+	<input type="checkbox" name="course[]" value="CPP" />CPP - 3000
+	<br>
+	<input type="checkbox" name="course[]" value="DS" />DS - 3500
+	<br>
+	<br>
+	<b>Advanced Courses</b>
+	<br>
+	<input type="radio" name="selection" value=".NET" />.NET - 8000
+	<br>
+	<input type="radio" name="selection" value="PHP" />PHP - 10000
+	<br>
+	<input type="radio" name="selection" value="JAVA" />JAVA - 10000
+	<br>
+	<input type="radio" name="selection" value="PYTHON" />PYTHON - 12000
+	<br>
+	<br>
+	<br>
+	<input type="submit" name="btnsubmit" value="Submit" />
+	</center>
+
+</form>
+
+<br>
+<br>
+
+<center>
+{% for result in data %}
+{{result}}<br>
+{% endfor %}
+</center>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+{% endblock %}
+
+
+
+
+
+
+
+
