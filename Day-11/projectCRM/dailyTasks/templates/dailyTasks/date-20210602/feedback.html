@@ -1,0 +1,75 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+works with radio boutton and check box by 'load or logic in one method'
+{% endblock %}
+{% block childcontent %}
+
+<br>
+<br>
+<center>
+<h1><b>Feedback Form</b></h1>
+</center>
+<br>
+<br>
+
+<form action="" method="post">
+{% csrf_token %}
+	
+	<center>
+
+	<b>Enter your name</b>
+	<br>
+	<input type="text" name="txtname" placeholder="Enter your Full Name" />
+	<br>
+	<br>
+
+	<b>Select Gender</b>
+	<br>
+	<input type="radio" name="gender" value="Male" />Male
+	<input type="radio" name="gender" value="Female" />Female
+	<br>
+	<br>
+
+	<b>Select Course</b>
+	<br>
+	<input type="checkbox" name="course[]" value="C" />C
+	<input type="checkbox" name="course[]" value="CPP" />CPP
+	<input type="checkbox" name="course[]" value="DS" />DS<br><br>
+
+	<b>Select Feedback</b>
+	<br>
+	<select name="feed">
+		<option value="">Select Feedback </option>
+		<option value="Best">Best</option>
+		<option value="Good">Good</option>
+		<option value="Average">Average</option>
+	</select>
+	<br>
+	<br>
+
+	<b>Select Branch</b>
+	<br>
+	<select name="branch[]" multiple="true">
+		<option value="">Select Branch</option>
+		<option value="Palasia">Palasia</option>
+		<option value="VijayNagar">VijayNagar</option>
+		<option value="Bhawarkua">BhawarKua</option>
+	</select>
+	<br>
+	<br>
+
+	<input type="submit" name="btnsubmit" value="Submit" />
+	<br>
+	<br>
+
+	</center>
+</form>	
+
+<center>
+{% for val in data %}
+{{val}} <br>
+{% endfor %}
+</center>
+
+
+{% endblock  %}
