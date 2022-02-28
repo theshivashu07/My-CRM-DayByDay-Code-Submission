@@ -1,0 +1,60 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+Odd's table and Even's factorial by 'post_Method'
+{% endblock %}
+{% block childcontent %}
+
+
+
+<form action="program1202105292" method="post">
+{% csrf_token %}
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<center>
+	Enter Number
+	<br>
+	<input type="text" name="txtnum1" placeholder="Enter First Number" />
+	<br>
+	<br>
+	<br>
+	<input type="submit" name="btnsubmit" value="justChecked" />
+	</center>
+
+</form>
+
+<br>
+<br>
+
+<center>
+{% for result in data %}
+<p>{{result}}</p>
+{% endfor %}
+</center>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+{% endblock %}
+
+
+
+
+
+
+
+

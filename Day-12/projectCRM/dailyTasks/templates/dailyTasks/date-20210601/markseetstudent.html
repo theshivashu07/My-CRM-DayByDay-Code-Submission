@@ -1,0 +1,99 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+Marksheet by dictionary, by 'load or logic in one method'
+{% endblock %}
+{% block childcontent %}
+
+
+
+<form action="" method="post">
+{% csrf_token %}
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<center>
+	<tr>
+		<td>Enter First Subject Name---------</td>
+		<td><input type="text" name="txtnum11" placeholder="Enter Name" /></td>
+	</tr>
+	<br>
+	<tr>
+		<td>Enter it's having Marks------------</td>
+		<td><input type="text" name="txtnum12" placeholder="Enter marks" /></td>
+	</tr>
+	<br>
+	<br>
+	<tr>
+		<td>Enter Second Subject Name-----</td>
+		<td><input type="text" name="txtnum21" placeholder="Enter Name" /></td>
+	</tr>
+	<br>
+	<tr>
+		<td>Enter it's having Marks------------</td>
+		<td><input type="text" name="txtnum22" placeholder="Enter marks" /></td>
+	</tr>
+	<br>
+	<br>
+	<tr>
+		<td>Enter Third Subject Name--------</td>
+		<td><input type="text" name="txtnum31" placeholder="Enter Name" /></td>
+	</tr>
+	<br>
+	<tr>
+		<td>Enter it's having Marks------------</td>
+		<td><input type="text" name="txtnum32" placeholder="Enter marks" /></td>
+	</tr>
+	<br>
+	<br>
+	<tr>
+		<td>Enter Forth Subject Name--------</td>
+		<td><input type="text" name="txtnum41" placeholder="Enter Name" /></td>
+	</tr>
+	<br>
+	<tr>
+		<td>Enter it's having Marks------------</td>
+		<td><input type="text" name="txtnum42" placeholder="Enter marks" /></td>
+	</tr>
+	<br>
+	<br>
+	<tr>
+		<td>Enter Fifth Subject Name---------</td>
+		<td><input type="text" name="txtnum51" placeholder="Enter Name" /></td>
+	</tr>
+	<br>
+	<tr>
+		<td>Enter it's having Marks------------</td>
+		<td><input type="text" name="txtnum52" placeholder="Enter marks" /></td>
+	</tr>
+	<br>
+	<br>
+	<br>
+
+	<input type="submit" name="btnsubmit" value="viewResult" />
+	</center>
+
+</form>
+
+
+<center>
+{% for data in result %}
+{{data}}<br>
+{% endfor %}
+</center>
+
+	<br>
+	<br>
+	<br>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
