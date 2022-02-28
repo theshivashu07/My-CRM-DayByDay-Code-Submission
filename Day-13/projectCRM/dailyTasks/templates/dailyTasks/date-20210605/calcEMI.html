@@ -1,0 +1,92 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+FeedBack - RadioButton&CheckBox
+{% endblock %}
+{% block childcontent %}
+
+<br>
+<br>
+<center>
+<h1><b>Feedback Form</b></h1>
+</center>
+<br>
+<br>
+
+<form action="" method="post">
+{% csrf_token %}
+
+
+    <b>What's your age : </b>
+    <select name="feed">
+        <option value="">None</option>
+        <option value="one" {% if feedchoice == 'one' %} selected {% endif %}>00-18</option>
+        <option value="two" {% if feedchoice == 'two' %} selected {% endif %}>18-30</option>
+        <option value="three" {% if feedchoice == 'three' %} selected {% endif %}>30-45</option>
+        <option value="four" {% if feedchoice == 'four' %} selected {% endif %}>45-60</option>
+        <option value="five" {% if feedchoice == 'five' %} selected {% endif %}>60++</option>
+    </select>
+    <br>
+    <br>
+    <br>
+    <b>Fill Health Related Issues : </b>
+    <br>
+    <input type="checkbox" name="course[]" value="Infection" {% if 'Infection' in select %} checked {% endif %} />You've any <b>Infection</b> related issues? <br>
+    <input type="checkbox" name="course[]" value="Diabetes" {% if 'Diabetes' in select %} checked {% endif %} />You've any <b> Diabetes</b> related issues? <br>
+    <input type="checkbox" name="course[]" value="BloodPressure" {% if 'BloodPressure' in select %} checked {% endif %} />You've any <b> Blood Pressure</b> related issues? <br>
+    <input type="checkbox" name="course[]" value="KidneyDisease" {% if 'KidneyDisease' in select %} checked {% endif %} />You've any <b> Kidney Disease</b> related issues? <br>
+    <input type="checkbox" name="course[]" value="Sugar" {% if 'Sugar' in select %} checked {% endif %} />You've any <b>Sugar</b> related issues? <br>
+    <input type="checkbox" name="course[]" value="BrainStroke" {% if 'BrainStroke' in select %} checked {% endif %} />You've any <b>Brain Stroke</b> related issues? <br>
+    <input type="checkbox" name="course[]" value="Asthma" {% if 'Asthma' in select %} checked {% endif %} />You've any <b>Asthma</b> related issues? <br>
+    <input type="checkbox" name="course[]" value="Another" {% if 'Another' in select %} checked {% endif %} />You've any <b>Another</b> health related issues? <br>
+    <input type="checkbox" name="course[]" value="Nothing" {% if 'Nothing' in select %} checked {% endif %} />Is you've no health related issues? <br>
+    <br>
+    <br>
+
+
+>Most common symptoms:
+fever
+dry cough
+tiredness
+>Less common symptoms:
+aches and pains
+sore throat
+diarrhoea
+conjunctivitis
+headache
+loss of taste or smell
+a rash on skin, or discolouration of fingers or toes
+>Serious symptoms:
+difficulty breathing or shortness of breath
+chest pain or pressure
+loss of speech or movement
+    
+
+
+
+
+    <input type="checkbox" name="course[]" value="" {% if '' in select %} checked {% endif %} />You've any <b></b> related issues? <br>
+    <input type="checkbox" name="course[]" value="" {% if '' in select %} checked {% endif %} />You've any <b></b> related issues? <br>
+    <input type="checkbox" name="course[]" value="" {% if '' in select %} checked {% endif %} />You've any <b></b> related issues? <br>
+    <input type="checkbox" name="course[]" value="" {% if '' in select %} checked {% endif %} />You've any <b></b> related issues? <br>
+    <input type="checkbox" name="course[]" value="" {% if '' in select %} checked {% endif %} />You've any <b></b> related issues? <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <input type="submit" name="btnsubmit" value="Submit" />
+    <br>
+    <br>
+
+    </center>
+</form> 
+
+<center>
+{% for val in data %}
+{{val}} <br>
+{% endfor %}
+</center>
+    <br>
+    <br>
+
+{% endblock  %}
