@@ -1,0 +1,75 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+FeedBack - RadioButton&CheckBox
+{% endblock %}
+{% block childcontent %}
+
+<br>
+<br>
+<center>
+<h1><b>Feedback Form</b></h1>
+</center>
+<br>
+<br>
+
+<form action="" method="post">
+{% csrf_token %}
+	
+	<center>
+	<b>Enter your name</b>
+	<br>
+	<input type="text" name="txtname" value="{{txtbox1}}" placeholder="Enter your Full Name" />
+	<br>
+	<br>
+
+	<b>Select Gender</b>
+	<br>
+	<input type="radio" name="gender" value="Male" {% if choice == 'Male' %} checked {% endif %} />Male
+	<input type="radio" name="gender" value="Female" {% if choice == 'Female' %} checked {% endif %} />Female
+	<br>
+	<br>
+
+	<b>Select Course</b>
+	<br>
+	<input type="checkbox" name="course[]" value="C" {% if 'C' in select %} checked {% endif %} />C
+	<input type="checkbox" name="course[]" value="CPP" {% if 'CPP' in select %} checked {% endif %} />CPP
+	<input type="checkbox" name="course[]" value="DS" {% if 'DS' in select %} checked {% endif %} />DS<br><br>
+
+	<b>Select Feedback</b>
+	<br>
+	<select name="feed">
+		<option value="">Select Feedback </option>
+		<option value="Best" {% if feedchoice == 'Best' %} selected {% endif %}>Best</option>
+		<option value="Good" {% if feedchoice == 'Good' %} selected {% endif %}>Good</option>
+		<option value="Average" {% if feedchoice == 'Average' %} selected {% endif %}>Average</option>
+	</select>
+	<br>
+	<br>
+
+	<b>Select Branch</b>
+	<br>
+	<select name="branch[]" multiple="true">
+		<option value="">Select Branch</option>
+		<option value="Palasia" {% if 'Palasia' in branch %} selected {% endif %} >Palasia</option>
+		<option value="VijayNagar" {% if 'VijayNagar' in branch %} selected {% endif %} >VijayNagar</option>
+		<option value="Bhawarkua" {% if 'Bhawarkua' in branch %} selected {% endif %} >BhawarKua</option>
+	</select>
+	
+	<br>
+	<br>
+	<input type="submit" name="btnsubmit" value="Submit" />
+	<br>
+	<br>
+
+	</center>
+</form>	
+
+<center>
+{% for val in data %}
+{{val}} <br>
+{% endfor %}
+</center>
+	<br>
+	<br>
+
+{% endblock  %}

@@ -1,0 +1,73 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+Fee Calculation
+{% endblock %}
+{% block childcontent %}
+
+
+
+<form action="" method="post">
+{% csrf_token %}
+	<br>
+	<br>
+	<br>
+	<br>
+	<center>
+	<h2><b>Fee Calc</b></h2>
+	<br>
+	<br>
+	<b>Basic Courses</b>
+	<br>
+	<input type="checkbox" name="course[]" value="C" {% if 'C' in select %} checked {% endif %} />C - 2000
+	<br>
+	<input type="checkbox" name="course[]" value="CPP" {% if 'CPP' in select %} checked {% endif %} />CPP - 3000
+	<br>
+	<input type="checkbox" name="course[]" value="DS" {% if 'DS' in select %} checked {% endif %} />DS - 3500
+	<br>
+	<br>
+	<b>Advanced Courses</b>
+	<br>
+	<input type="radio" name="selection" value=".NET" {% if choice == '.NET' %} checked {% endif %} />.NET - 8000
+	<br>
+	<input type="radio" name="selection" value="PHP" {% if choice == 'PHP' %} checked {% endif %} />PHP - 10000
+	<br>
+	<input type="radio" name="selection" value="JAVA" {% if choice == 'JAVA' %} checked {% endif %} />JAVA - 10000
+	<br>
+	<input type="radio" name="selection" value="PYTHON" {% if choice == 'PYTHON' %} checked {% endif %} />PYTHON - 12000
+	<br>
+	<br>
+	<br>
+	<input type="submit" name="btnsubmit" value="Submit" />
+	</center>
+
+</form>
+
+<br>
+<br>
+
+<center>
+{% for result in data %}
+{{result}}<br>
+{% endfor %}
+</center>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+{% endblock %}
+
+
+
+
+
+
+
+

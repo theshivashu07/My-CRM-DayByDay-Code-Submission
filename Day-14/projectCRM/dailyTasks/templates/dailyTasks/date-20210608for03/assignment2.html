@@ -1,0 +1,51 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+Color Change - by same master page
+{% endblock %}
+{% block childcontent %}
+
+
+<form action="" method="post" style="background:{{result}}">
+{% csrf_token %}
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<center>
+	<br>
+	<br>
+	<br>
+	<b>Select Colors :</b>
+	<br>
+	<input type="radio" name="selection" value="red" {% if result == 'red' %} checked {% endif %} />RED  
+	<br>
+	<input type="radio" name="selection" value="blue" {% if result == 'blue' %} checked {% endif %} />BLUE
+	<br>
+	<input type="radio" name="selection" value="green" {% if result == 'green' %} checked {% endif %} />GREEN
+	<br>
+	<br>
+	<input type="submit" name="btnsubmit" value="Submit" />
+	</center>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+</form>
+
+	
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+MiddleNo by 'load or logic in one method'
+{% endblock %}
+{% block childcontent %}
+
+
+
+<form action="" method="post">
+{% csrf_token %}
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<center>
+
+	<tr>
+		<td>Enter First Number---------</td>
+		<td><input type="text" name="txtnum1" value="{{txtbox1}}" placeholder="Enter First Number" /></td>
+	<tr>
+	<br>
+	<tr>
+		<td>Enter Second Number-----</td>
+		<td><input type="text" name="txtnum2" value="{{txtbox2}}" placeholder="Enter Second Number" /></td>
+	<tr>
+	<br>
+	<tr>
+		<td>Enter Third Number--------</td>
+		<td><input type="text" name="txtnum3"  value="{{txtbox3}}" placeholder="Enter Third Number" /></td>
+	<tr>
+
+	<br>
+	<br>
+	<br>
+	<input type="submit" name="btnsubmit" value="FindMiddleNo" />
+	</center>
+
+</form>
+
+
+<center>
+{{result}}
+</center>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
