@@ -1,0 +1,97 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+Marksheet by 'load or logic in one method'
+{% endblock %}
+{% block childcontent %}
+
+
+
+<form action="" method="post">
+{% csrf_token %}
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<center>
+	<tr>
+		<td>Enter First Subject Name---------</td>
+		<td><input type="text" name="txtnum11" value="{{txtbox11}}" placeholder="Enter Name" /></td>
+	</tr>
+	<br>
+	<tr>
+		<td>Enter it's having Marks------------</td>
+		<td><input type="text" name="txtnum12" value="{{txtbox12}}" placeholder="Enter marks" /></td>
+	</tr>
+	<br>
+	<br>
+	<tr>
+		<td>Enter Second Subject Name-----</td>
+		<td><input type="text" name="txtnum21" value="{{txtbox21}}" placeholder="Enter Name" /></td>
+	</tr>
+	<br>
+	<tr>
+		<td>Enter it's having Marks------------</td>
+		<td><input type="text" name="txtnum22" value="{{txtbox22}}" placeholder="Enter marks" /></td>
+	</tr>
+	<br>
+	<br>
+	<tr>
+		<td>Enter Third Subject Name--------</td>
+		<td><input type="text" name="txtnum31" value="{{txtbox31}}" placeholder="Enter Name" /></td>
+	</tr>
+	<br>
+	<tr>
+		<td>Enter it's having Marks------------</td>
+		<td><input type="text" name="txtnum32" value="{{txtbox32}}" placeholder="Enter marks" /></td>
+	</tr>
+	<br>
+	<br>
+	<tr>
+		<td>Enter Forth Subject Name--------</td>
+		<td><input type="text" name="txtnum41" value="{{txtbox41}}" placeholder="Enter Name" /></td>
+	</tr>
+	<br>
+	<tr>
+		<td>Enter it's having Marks------------</td>
+		<td><input type="text" name="txtnum42" value="{{txtbox42}}" placeholder="Enter marks" /></td>
+	</tr>
+	<br>
+	<br>
+	<tr>
+		<td>Enter Fifth Subject Name---------</td>
+		<td><input type="text" name="txtnum51" value="{{txtbox51}}" placeholder="Enter Name" /></td>
+	</tr>
+	<br>
+	<tr>
+		<td>Enter it's having Marks------------</td>
+		<td><input type="text" name="txtnum52" value="{{txtbox52}}" placeholder="Enter marks" /></td>
+	</tr>
+	<br>
+	<br>
+	<br>
+
+	<input type="submit" name="btnsubmit" value="viewResult" />
+	</center>
+
+</form>
+
+
+<center>
+{{result}}
+</center>
+
+	<br>
+	<br>
+	<br>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

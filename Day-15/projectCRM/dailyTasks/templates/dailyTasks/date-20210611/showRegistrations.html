@@ -1,0 +1,51 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+FeedBack - RadioButton&CheckBox
+{% endblock %}
+{% block childcontent %}
+
+
+
+
+
+<center>
+
+
+<form action="" method="post">
+{% csrf_token %}
+    
+<table border="1">
+    <tr>
+        <b>
+        <th>ID</th>
+        <th>User Name</th>
+        <th>Email Id</th>
+        <th>Password</th>
+        <th>Full Name</th>
+        <th>Age</th>
+        <th>Mobile Number</th>
+    </b>
+    </tr>
+    {%  for data in result  %}
+        <tr>
+            <td>{{data.id}}</td>
+            <td>{{data.userName}}</td>
+            <td>{{data.emailId}}</td>
+            <td>{{data.password}}</td>
+            <td>{{data.fullName}}</td>
+            <td>{{data.Age}}</td>
+            <td>{{data.mobileNumber}}</td>
+        </tr>
+    {%  endfor  %}
+</table>
+
+</form>
+
+
+</center>
+
+
+
+
+
+{% endblock  %}

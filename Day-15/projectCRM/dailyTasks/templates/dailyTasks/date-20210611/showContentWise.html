@@ -1,0 +1,82 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+FeedBack - RadioButton&CheckBox
+{% endblock %}
+{% block childcontent %}
+
+
+
+
+
+<center>
+
+
+<form action="" method="post">
+{% csrf_token %}
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <b>Select selection</b>
+    <br>
+    <input type="radio" name="selected" value="userName"/> by UserName
+    <br>
+    <input type="radio" name="selected" value="emailId"/> by EmailId
+    <br>
+    <input type="radio" name="selected" value="fullName"/> by FullName
+    <br>
+    <input type="radio" name="selected" value="Age"/> by Age
+    <br>
+    <input type="radio" name="selected" value="mobileNumber"/> by Mobile Number
+    <br>
+    <br>
+    <br>
+    <b>Enter your search</b>
+    <br>
+    <input type="text" name="txtanything" value="none" placeholder="Enter anything" />
+    <br>
+    <br>
+    <br>
+    <br>
+    <input type="submit" name="btnsubmit" value="Submit" />
+    <br>
+    <br>
+
+
+<table border="1">
+    <tr>
+        <b>
+        <th>ID</th>
+        <th>User Name</th>
+        <th>Email Id</th>
+        <th>Password</th>
+        <th>Full Name</th>
+        <th>Age</th>
+        <th>Mobile Number</th>
+    </b>
+    </tr>
+    {%  for data in result  %}
+        <tr>
+            <td>{{data.id}}</td>
+            <td>{{data.userName}}</td>
+            <td>{{data.emailId}}</td>
+            <td>{{data.password}}</td>
+            <td>{{data.fullName}}</td>
+            <td>{{data.Age}}</td>
+            <td>{{data.mobileNumber}}</td>
+        </tr>
+    {%  endfor  %}
+</table>
+
+</form>
+
+
+</center>
+
+
+
+
+
+{% endblock  %}

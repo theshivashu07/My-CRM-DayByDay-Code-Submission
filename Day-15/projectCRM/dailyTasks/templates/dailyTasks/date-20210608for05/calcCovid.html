@@ -1,0 +1,82 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+FeedBack - RadioButton&CheckBox
+{% endblock %}
+{% block childcontent %}
+
+<br>
+<br>
+
+<h1><b>Covid-19 Test</b></h1>
+
+<br>
+<br>
+
+<form action="" method="post">
+{% csrf_token %}
+
+    <b>What's your age : </b>
+    <select name="age">
+        <option value="">None</option>
+        <option value="one" {% if feedchoice == 'one' %} selected {% endif %}>00-18</option>
+        <option value="two" {% if feedchoice == 'two' %} selected {% endif %}>18-30</option>
+        <option value="three" {% if feedchoice == 'three' %} selected {% endif %}>30-45</option>
+        <option value="four" {% if feedchoice == 'four' %} selected {% endif %}>45-60</option>
+        <option value="five" {% if feedchoice == 'five' %} selected {% endif %}>60++</option>
+    </select>
+    <br>
+    <br>
+    <br>
+    <h5><b>Fill Health Related Issues : </b></h5>
+    <input type="checkbox" name="HealthIssues[]" value="Infection" {% if 'Infection' in select %} checked {% endif %} />You've any <b>Infection</b> related issues? <br>
+    <input type="checkbox" name="HealthIssues[]" value="Diabetes" {% if 'Diabetes' in select %} checked {% endif %} />You've any <b> Diabetes</b> related issues? <br>
+    <input type="checkbox" name="HealthIssues[]" value="BloodPressure" {% if 'BloodPressure' in select %} checked {% endif %} />You've any <b> Blood Pressure</b> related issues? <br>
+    <input type="checkbox" name="HealthIssues[]" value="KidneyDisease" {% if 'KidneyDisease' in select %} checked {% endif %} />You've any <b> Kidney Disease</b> related issues? <br>
+    <input type="checkbox" name="HealthIssues[]" value="Sugar" {% if 'Sugar' in select %} checked {% endif %} />You've any <b>Sugar</b> related issues? <br>
+    <input type="checkbox" name="HealthIssues[]" value="BrainStroke" {% if 'BrainStroke' in select %} checked {% endif %} />You've any <b>Brain Stroke</b> related issues? <br>
+    <input type="checkbox" name="HealthIssues[]" value="Asthma" {% if 'Asthma' in select %} checked {% endif %} />You've any <b>Asthma</b> related issues? <br>
+    <input type="checkbox" name="HealthIssues[]" value="Another" {% if 'Another' in select %} checked {% endif %} />You've any <b>Another</b> health related issues? <br>
+    <input type="checkbox" name="HealthIssues[]" value="Nothing" {% if 'Nothing' in select %} checked {% endif %} />Is you've no health related issues? <br>
+    <br>
+    <br>
+	<h5><b>Covid-19 Related Issues : </b></h5>
+	<b>>> Most common symptoms:</b>
+	<br>
+    <input type="checkbox" name="covidSymptoms[]" value="Fever" {% if 'Fever' in select %} checked {% endif %} />You've any <b>Fever</b> related issues? <br>
+    <input type="checkbox" name="covidSymptoms[]" value="DryCough" {% if 'DryCough' in select %} checked {% endif %} />You've any <b>Dry Cough</b> related issues? <br>
+    <input type="checkbox" name="covidSymptoms[]" value="Tiredness" {% if 'Tiredness' in select %} checked {% endif %} />You've any <b>Tiredness</b> related issues? <br> <br>
+    <b>>> Less common symptoms::</b>
+    <br>
+    <input type="checkbox" name="covidSymptoms[]" value="AchesAndPains" {% if 'AchesAndPains' in select %} checked {% endif %} />You've any <b>Aches and Pains</b> related issues? <br>
+    <input type="checkbox" name="covidSymptoms[]" value="SoreThroat" {% if 'SoreThroat' in select %} checked {% endif %} />You've any <b>Sore Throat</b> related issues? <br>
+    <input type="checkbox" name="covidSymptoms[]" value="Diarrhoea" {% if 'Diarrhoea' in select %} checked {% endif %} />You've any <b>Diarrhoea</b> related issues? <br>
+    <input type="checkbox" name="covidSymptoms[]" value="Conjunctivitis" {% if 'Conjunctivitis' in select %} checked {% endif %} />You've any <b>Conjunctivitis</b> related issues? <br>
+    <input type="checkbox" name="covidSymptoms[]" value="Headache" {% if 'Headache' in select %} checked {% endif %} />You've any <b>Headache</b> related issues? <br>
+	<input type="checkbox" name="covidSymptoms[]" value="LOTOS" {% if 'LOTOS' in select %} checked {% endif %} />You've any <b>Loss of Taste or Smell</b> related issues? <br>
+    <input type="checkbox" name="covidSymptoms[]" value="RashOnSkin" {% if 'RashOnSkin' in select %} checked {% endif %} />You've any <b>a Rash on Skin</b> related issues? <br>
+   	<input type="checkbox" name="covidSymptoms[]" value="DOFOT" {% if 'DOFOT' in select %} checked {% endif %} />You've any <b>Discolouration of Fingers or Toes</b> related issues? <br> <br>
+    <b>>> Serious symptoms:</b>
+    <br> 
+    <input type="checkbox" name="covidSymptoms[]" value="DB" {% if 'DB' in select %} checked {% endif %} />You've any <b>Difficulty Breathing</b> related issues? <br>
+    <input type="checkbox" name="covidSymptoms[]" value="SOB" {% if 'SOB' in select %} checked {% endif %} />You've any <b>Shortness of Breath</b> related issues? <br>
+    <input type="checkbox" name="covidSymptoms[]" value="CPOP" {% if 'CPOP' in select %} checked {% endif %} />You've any <b>Chest Pain or Pressure</b> related issues? <br>
+    <input type="checkbox" name="covidSymptoms[]" value="LOSOM" {% if 'LOSOM' in select %} checked {% endif %} />You've any <b>Loss of Speech or Movement</b> related issues? <br>
+    <input type="checkbox" name="HealthIssues[]" value="Another" {% if 'Another' in select %} checked {% endif %} />You've any <b>Another Covid-19</b> related issues? <br> 
+    <input type="checkbox" name="HealthIssues[]" value="Nothing" {% if 'Nothing' in select %} checked {% endif %} />Is you've no health related issues? <br>
+    <br>
+    <br>
+    <br>
+    <input type="submit" name="btnsubmit" value="Submit" />
+    <br>
+    <br>
+
+</form> 
+
+{{msg}}
+
+    <br>
+    <br>
+
+
+
+{% endblock  %}
