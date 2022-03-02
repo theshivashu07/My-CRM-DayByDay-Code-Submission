@@ -1,0 +1,50 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+#AddStudents
+{% endblock %}
+{% block childcontent %}
+
+
+
+
+
+<center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1><b> Add Students </b></h1>
+<br><br>
+<form action="" method="post">
+{% csrf_token %}
+Enter Roll Number : 
+<br> 
+<input type="text" name="txtnum1" placeholder="Enter Roll Number" required="" /> 
+<br><br> 
+Enter Student Name : 
+<br> 
+<input type="text" name="txtnum2" placeholder="Enter Student Name" required="" /> 
+<br><br>
+	<select name="cId">
+		<option value="">Select Course Id</option>
+		{%  for data in courses  %}
+		<option value="{{data.courseIdC}}">{{data.courseIdC}} | {{data.courceName}} | {{data.branch}} | {{data.courseFee}}</option>
+		{%  endfor  %}
+	</select>
+<br><br>
+<input type="submit" name="btnsubmit" value="Add" />
+</form>
+{{result}}
+<br>
+<br>
+<br>
+<br>
+<br>
+</center>
+
+
+
+
+{% endblock %}

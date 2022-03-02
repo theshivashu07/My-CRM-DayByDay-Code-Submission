@@ -1,0 +1,65 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+#ViewCourses
+{% endblock %}
+{% block childcontent %}
+
+
+
+
+
+<center>
+
+
+<form action="" method="post">
+{% csrf_token %}
+
+<br>
+<br>
+<h1><b> Courses List </b></h1>
+<br>
+<br>
+<br>
+<table border="1">
+    <tr>
+        <th>Branch Name</th>
+        <th>Course Id</th>
+        <th>Course Name</th>
+        <th>Course Fee</th>
+    </tr>
+    {%  for data in result  %}
+        <tr>
+            <td>{{data.branch}}</td>
+            <td>{{data.courseIdC}}</td>
+            <td>{{data.courceName}}</td>
+            <td>{{data.courseFee}}</td>
+        </tr>
+    {%  endfor  %}
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</form>
+
+
+</center>
+
+
+
+
+
+{% endblock  %}

@@ -1,0 +1,47 @@
+{% extends 'Guest/master.html' %}
+{% block tcontent %}
+#theSignUp
+{% endblock %}
+{% block childcontent %}
+
+
+
+
+
+<center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1><b> SignUp </b></h1>
+<br><br>
+<form action="" method="post">
+{% csrf_token %}
+<input type="text" name="txtuname" placeholder="Enter Username" required="" />
+<br><br>
+<input type="email" name="txtemail" placeholder="Enter Email" required="" />
+<br><br>
+<input type="password" name="txtpass" placeholder="Enter Password" required="" />
+<br><br>
+<input type="text" name="txtfname" placeholder="Enter Fullname" required="" />
+<br><br>
+<input type="number" name="txtage" placeholder="Enter Age" required="" />
+<br><br>
+<input type="number" name="txtmobile" placeholder="Enter Mobile" required="" />
+<br><br>
+<input type="submit" name="btnsubmit" value="SIGN UP" />
+</form>
+{{result}}
+<br>
+<br>
+<br>
+<br>
+<br>
+</center>
+
+
+
+
+{% endblock %}
