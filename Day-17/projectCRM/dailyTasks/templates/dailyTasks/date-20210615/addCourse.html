@@ -1,0 +1,43 @@
+{% extends 'dailyTasks/master.html' %}
+{% block tcontent %}
+#AddCourses
+{% endblock %}
+{% block childcontent %}
+
+
+
+
+
+<center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1><b> Add Courses </b></h1>
+<br><br>
+<form action="" method="post">
+{% csrf_token %}
+<input type="text" name="txtnum1" placeholder="Branch Name" required="" />
+<br><br>
+<input type="text" name="txtnum2" placeholder="Course Id" required="" />
+<br><br>
+<input type="text" name="txtnum3" placeholder="Course Name" required="" />
+<br><br>
+<input type="text" name="txtnum4" placeholder="Course Fee" required="" />
+<br><br>
+<input type="submit" name="btnsubmit" value="Add" />
+</form>
+{{result}}
+<br>
+<br>
+<br>
+<br>
+<br>
+</center>
+
+
+
+
+{% endblock %}
