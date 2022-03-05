@@ -1,0 +1,54 @@
+{% extends 'Guest/master.html' %}
+{% block tcontent %}
+#theLogin
+{% endblock %}
+{% block childcontent %}
+
+<div>
+    <div class="d-lg-flex half">
+        <div class="bg order-1 order-md-2" style="background-image:url(/static/images/MSD1.jpg)"></div>
+        <div class="contents order-2 order-md-1">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-7">
+                        <h3>Login to <strong>vashu's projectCRM</strong></h3>
+                        <p class="mb-4">Hey, if you already registered then continue. But if you not registered, then register first, okkay..</p>
+                        <form action="" method="post">
+                            <div class="form-group first">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" placeholder="enter your email" id="username">
+                            </div>
+                            <div class="form-group last mb-3">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" placeholder="enter your password" id="password">
+                            </div>
+                            <div class="d-flex mb-5 align-items-center">
+                                <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+<input type="checkbox" checked/>
+<div class="control__indicator"></div>
+</label>
+                                <span class="ml-auto"><a href="/promanager/login" class="forgot-pass">Forgot Password</a></span>
+                            </div>
+                            <input type="submit" value="Log In" class="btn btn-block btn-primary">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/popper.min.js+bootstrap.min.js+main.js.pagespeed.jc.knpfk1Gqze.js"></script>
+    <script>
+        eval(mod_pagespeed_kuJAr8zZic);
+    </script>
+    <script>
+        eval(mod_pagespeed_Hwy1FMvIvF);
+    </script>
+    <script>
+        eval(mod_pagespeed_R4pSQ1BWYQ);
+    </script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"653c2f861edb5422","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.5.1","si":10}'></script>
+
+
+{% endblock %}
